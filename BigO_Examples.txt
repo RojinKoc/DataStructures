@@ -1,0 +1,96 @@
+Algo1(){
+    int i;
+    for (i = 1 to n)
+    print("Hello world");
+}
+
+ Her iterasyon O(1)
+ Döngü n kez döner
+ O(n)
+
+
+Algo2(){
+    int i;
+    for (i = 1 to n)
+        for (j =1 to n)
+    print("Hello world");
+}
+
+ İç döngü n kez
+ Dış döngü da n kez
+ Toplam çalıştırma: n × n = n²
+ O(n²)
+
+
+Algo3(){
+    int i;
+    for (i = 1; i < n; i = i * 2)
+    print("Hello world");
+}
+
+ i → 1, 2, 4, 8, 16, ...
+ Bu 2’nin kuvvetleri şeklinde artar.
+ i = 2ᵏ = n
+ k = log₂ n
+ O(log n)
+
+
+Algo4(){
+    int i;
+    for (i = 1; i < n; i = i / 5)
+    print("Hello world");
+}
+
+ Bu koddaki tek tuhaflık → i = i/5 küçülüyor olması, ama mantık değişmez.
+ Genel form:
+ Bir sayı her seferinde 5’e bölünüyorsa:
+ n → n/5 → n/25 → ... → 1
+ Bu da log₅(n) adım demektir.
+ O(log n)
+ Taban önemli değildir → Big O’da taban atılır → O(log n)
+
+
+Algo5(){
+    int i;
+    for (i = 1; i < n^3; i = i * 5)
+    print("Hello world");
+}
+
+ Döngü koşulu:
+ i < n³
+ Artış:
+ i = 5ᵏ
+ 5ᵏ = n³
+ k = log₅(n³)
+ k = 3·log₅(n)
+ O(log n)
+ (not: katsayı önemsiz → Big O’da atılır)
+
+
+Algo6(){
+    int i;
+    for (i = 1; i^2 <= n; i = i++)
+    print("Hello world");
+}
+
+ Koşul:
+ i² ≤ n
+ i ≤ √n
+ Döngü √n kere döner → O(√n)
+
+
+Algo7(){
+    int i = 1, k = 1;
+    while (k <= n)
+    {
+        i++;
+        k = k + i;
+        print("Hello World")
+    }
+}
+
+ k şu şekilde artar:
+ k = 1 + 2 + 3 + ... + z = z(z+1)/2
+ Şart:
+ z²/2 ≈ n → z ≈ √n
+ O(√n)
