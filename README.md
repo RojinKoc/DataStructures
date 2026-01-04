@@ -1,54 +1,66 @@
-# 📚 Data Structures and Algorithms in C
+# 📚 Data Structures and Algorithms (C Implementation)
 
-This repository serves as a comprehensive collection of data structure implementations and algorithm analyses using the **C programming language**. 
+![Language](https://img.shields.io/badge/Language-C-blue.svg)
+![Course](https://img.shields.io/badge/Course-Data%20Structures-green.svg)
+![Status](https://img.shields.io/badge/Status-Active-orange.svg)
 
-It reflects my learning journey and practical applications within the **Data Structures** course. The repository is actively maintained and updated as I progress through advanced topics.
+This repository contains a comprehensive collection of data structures and algorithms implemented in **C**. It serves as a portfolio for the **Data Structures** course, demonstrating low-level memory management, algorithmic logic, and time complexity analysis.
 
 ## 🚀 Project Overview
 
-The primary goal of this project is to understand the inner workings of data storage, memory management (pointers), and algorithmic efficiency (Big O notation) by implementing them from scratch without relying on high-level libraries.
+The primary goal of this project is to implement fundamental computer science concepts from scratch, without relying on high-level libraries. This ensures a deep understanding of:
+* **Pointers & Memory Allocation** (`malloc`, `free`)
+* **Abstract Data Types (ADTs)**
+* **Algorithmic Complexity** (Big O Notation)
+* **Recursion & Iteration**
 
-## 📂 Current Contents
+## 📂 Repository Contents
 
-### 1. Arrays & Complexity Analysis
-* **Array Operations:** Low-level implementation of insertion, deletion, and reversing algorithms.
-* **Big O Notation:** Analysis of time complexity for the first 7 fundamental algorithm questions.
+### 1. Linked Lists (Linear Data Structures)
+Implementations of dynamic data storage with various linkage types.
+* **Singly Linked List:** Creation, Traversal, Insertion (Head/Tail/Middle), Deletion by value.
+* **Doubly Linked List:** bidirectional navigation using `prev` and `next` pointers.
+* **Circular Linked List:** Ring topology implementation; handling traversal without NULL termination and specific deletion logic for Head/Tail nodes.
 
-### 2. Singly Linked Lists
-* **CRUD Operations:** Creating a list, inserting nodes (Head, Middle, Tail), and deleting nodes by value.
-* **Traversal:** Iterating through the list to display data.
-* **Complexity:** Documentation of time complexity for each operation ($O(1)$ vs $O(N)$).
+### 2. Stacks & Queues (LIFO/FIFO)
+* **Shunting Yard Algorithm:** An implementation of Dijkstra's algorithm to parse mathematical expressions.
+    * Converts **Infix** expressions (e.g., `a*b+c`) to **Postfix** (e.g., `ab*c+`).
+    * Handles operator precedence and parenthesis.
 
-### 3. Doubly Linked Lists
-* **Bidirectional Navigation:** Implementation of `prev` and `next` pointers.
-* **Insertion Logic:** * Insert at End (Tail manipulation).
-    * Insert After a specific node (Handling 4-pointer updates).
-* **Recursive Operations:** A recursive approach to traverse and delete all nodes, demonstrating stack memory usage and post-order traversal logic.
+### 3. Trees & Heaps (Hierarchical Data Structures)
+* **Tree Creation from Array:** Algorithm to convert a linear array into a Binary Tree using index mapping (`2i+1`, `2i+2`).
+* **Heaps (Priority Queues):**
+    * **Max Heap:** Insertion, Deletion (Extract Max), and Heapify operations.
+    * **Min Heap:** Logic adaptation for priority management.
+    * *Includes array-based representation analysis.*
 
-### 4. Circular Linked Lists
-* **Structural Differences:** Comparison between Linear and Circular lists.
-* **Algorithmic Behavior:** Observations on how sorting algorithms react to circular boundaries (avoiding infinite loops).
+### 4. Graphs (Complex Relationships)
+* **Graph Traversals:**
+    * **DFS (Depth First Search):** Recursive implementation using Stack logic.
+    * **BFS (Breadth First Search):** Iterative implementation using Queue logic.
+* **Clustering (Connected Components):** Algorithm to detect and separate disconnected sub-graphs (clusters) using Adjacency Matrices.
 
-### 5. Stack Applications (Shunting Yard Algorithm)
-* **Infix to Postfix Conversion:** Implementation of Dijkstra's Shunting Yard algorithm.
-* **Logic:**
-    * Handling operator precedence (`*`, `/` vs `+`, `-`).
-    * Parenthesis management using a Stack data structure.
-    * *Example:* Converts `a*b+c` to `ab*c+`.
+### 5. Matrix & Array Optimization
+* **Sparse Matrix Transformation:** Optimization technique to compress large 2D arrays with mostly zero values into a coordinate list (Row, Col, Value) to save memory.
+* **Complexity Analysis:** Big O analysis for fundamental array operations (Reverse, Insertion, Deletion).
 
-## 🔜 Future Roadmap
+---
 
-This repository will be updated with the following topics in the upcoming weeks:
-- [ ] **Stacks & Queues:** Array and Linked List based implementations.
-- [ ] **Trees:** Binary Search Trees (BST), AVL Trees, and Traversals.
-- [ ] **Graphs:** Representation (Adjacency Matrix/List), BFS, and DFS algorithms.
-- [ ] **Sorting & Searching:** Merge Sort, Quick Sort, Binary Search implementation and analysis.
+## 🛠️ Compilation & Usage
 
-## 🛠️ How to Compile & Run
+Each module is self-contained. You can compile the C files using the GCC compiler.
 
-You can compile any C file in this repository using the GCC compiler.
+**Prerequisites:**
+* GCC Compiler (MinGW for Windows, default on Linux/macOS)
+* Visual Studio Code (Recommended)
 
-**Example for Linked List:**
+**Example: Running the Linked List Program**
 ```bash
-gcc src/linked_list.c -o program
+# Compile
+gcc LinkedList.c -o program
+
+# Run (Windows)
+.\program.exe
+
+# Run (Linux/Mac)
 ./program
